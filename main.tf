@@ -1,10 +1,20 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 2.70"
+    }
+    random = {
+      version = "2.2"
+    }
+  }
+}
+
 provider "aws" {
   region = var.aws_region
 }
 
-provider "random" {
-  version = "2.2"
-}
+provider "random" {}
 
 resource "random_pet" "table_name" {}
 
